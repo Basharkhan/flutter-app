@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/data/notifiers.dart';
 import 'package:flutter_app/views/wodget_tree.dart';
 import 'package:flutter_app/views/widgets/navbar_widget.dart';
 
@@ -17,16 +18,18 @@ class _MyAppState extends State<MyApp> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          brightness: Brightness.dark,
-        ),
-      ),
-      home: WidgetTree()
+    return ValueListenableBuilder(
+      valueListenable:  isDarkModeNotifier,
+      builder: (BuildContext context, dynamic isDarkMOde, Widget? child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              brightness: isDarkMOde ? Brightness.dark : Brightness.light,
+            ),
+            home: const WidgetTree(),
+          );
+      },
     );
   }
 }
-// begin from 1 hour and 31 minutes in the video
+// begin from 1 hour and 45 minutes in the video
