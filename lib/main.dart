@@ -19,17 +19,17 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
-      valueListenable:  isDarkModeNotifier,
+      valueListenable: isDarkModeNotifier,
       builder: (BuildContext context, dynamic isDarkMOde, Widget? child) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              brightness: isDarkMOde ? Brightness.dark : Brightness.light,
-            ),
-            home: const WidgetTree(),
-          );
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            brightness: isDarkMOde ? Brightness.dark : Brightness.light,
+          ),
+          home: const WidgetTree(),
+        );
       },
     );
   }
 }
-// begin from 1 hour and 45 minutes in the video
+// begin from 2 hour and 14 minutes in the video
