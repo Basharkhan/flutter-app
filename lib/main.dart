@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/data/notifiers.dart';
+import 'package:flutter_app/views/pages/welcme_page.dart';
 import 'package:flutter_app/views/wodget_tree.dart';
 import 'package:flutter_app/views/widgets/navbar_widget.dart';
 
@@ -26,10 +27,10 @@ class _MyAppState extends State<MyApp> {
           theme: ThemeData(
             brightness: isDarkMOde ? Brightness.dark : Brightness.light,
           ),
-          home: const WidgetTree(),
+          home: const WelcomePage(),
         );
       },
     );
   }
 }
-// begin from 2 hour and 14 minutes in the video
+// begin from 2 hour and 22 minutes in the video
