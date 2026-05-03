@@ -32,6 +32,41 @@ class _SettingsPageState extends State<SettingsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text("Hello"),
+                      duration: Duration(seconds: 2),
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                },
+                child: Text("Open Snackbar"),
+              ),
+              Divider(
+                color: Colors.green,
+                thickness: 2.0,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  showDialog(context: context, builder: (context) {
+                    return AlertDialog(
+                      title: Text("Alert Title"),
+                      content: Text("Alert Content"),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text("Close"),
+                        )
+                      ],
+                    );
+                  },);
+                },
+                child: Text("Open Dialog"),
+              ),
               TextField(
                 decoration: InputDecoration(border: OutlineInputBorder()),
                 controller: nameController,
